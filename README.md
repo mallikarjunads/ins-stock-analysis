@@ -68,3 +68,9 @@ pytest tests/
 
 pre-commit install
 
+
+5. Orchestration : Dagster web UI
+
+dagit -w dagster_project/workspace.yaml
+
+localhost:3000
