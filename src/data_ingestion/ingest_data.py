@@ -1,6 +1,7 @@
 import pandas as pd
 from pyspark.sql import SparkSession
 
+
 def load_data():
     """
     Function to create a Pandas DataFrame from a dictionary.
@@ -8,11 +9,8 @@ def load_data():
     Returns:
         pd.DataFrame: A DataFrame with example data.
     """
-    data = {
-        'Name': ['Alice', 'Bob', 'Cathy'],
-        'Age': [25, 30, 22]
-    }
-    
+    data = {"Name": ["Alice", "Bob", "Cathy"], "Age": [25, 30, 22]}
+
     df = pd.DataFrame(data)
     return df
 

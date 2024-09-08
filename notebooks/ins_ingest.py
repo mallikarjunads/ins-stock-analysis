@@ -1,5 +1,5 @@
 # Import the functions from the data_ingestion module
-from data_ingestion.ingest_data import load_data, create_spark_dataframe
+from data_ingestion.ingest_data import create_spark_dataframe, load_data
 
 # Call the Pandas function and display the DataFrame
 df_pandas = load_data()
