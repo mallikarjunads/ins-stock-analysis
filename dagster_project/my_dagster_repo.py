@@ -1,6 +1,6 @@
 from dagster import repository
 
-from jobs.my_job import my_job  # No change required as 'jobs' is now a module in 'src/'
+from jobs.my_job import my_job  # No change required as 'jobs' is in 'src/'
 
 
 @repository
