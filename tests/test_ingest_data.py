@@ -13,7 +13,7 @@ class TestDataIngestion(unittest.TestCase):
         # Check if the result is a DataFrame
         self.assertIsInstance(df, pd.DataFrame)
         
-        # Check the DataFrame shape IN DF
+        # Check the DataFrame shape
         self.assertEqual(df.shape, (3, 2))  # 3 rows, 2 columns
         
         # Check the content of the DataFrame
