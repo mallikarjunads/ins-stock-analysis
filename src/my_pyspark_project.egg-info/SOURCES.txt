@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.py
+src/config/__init__.py
+src/data_ingestion/__init__.py
+src/data_ingestion/ingest_data.py
+src/jobs/__init__.py
+src/jobs/my_job.py
+src/my_pyspark_project.egg-info/PKG-INFO
+src/my_pyspark_project.egg-info/SOURCES.txt
+src/my_pyspark_project.egg-info/dependency_links.txt
+src/my_pyspark_project.egg-info/requires.txt
+src/my_pyspark_project.egg-info/top_level.txt
+tests/test_ingest_data.py
