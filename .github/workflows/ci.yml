@@ -23,8 +23,14 @@ jobs:
       with:
         python-version: 3.9
         auto-activate-base: false
-        environment-file: environment.yaml  # Ensure this file exists
-        activate-environment: myenv        # Name of the Conda environment
+        environment-file: environment.yaml
+        activate-environment: myenv
+
+    - name: Install the Package (Editable Mode)
+      run: |
+        source /usr/share/miniconda/etc/profile.d/conda.sh
+        conda activate myenv
+        pip install -e .
 
     - name: Install Dependencies
       run: |
