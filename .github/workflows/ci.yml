@@ -23,9 +23,15 @@ jobs:
       with:
         python-version: 3.9
         auto-activate-base: false
-        environment-file: environment.yaml  # Ensure you have an environment.yml file in your repo
-        activate-environment: myenv        # Name of the environment from environment.yml
-        use-mamba: true                    # Optional: use Mamba (a faster package manager for Conda)
+        environment-file: environment.yaml  # Make sure the file exists
+        activate-environment: myenv        # Activate this environment
+        use-mamba: true                    # Optional, to use mamba for faster environment setup
+
+    - name: Initialize Conda
+      shell: bash -l {0}
+      run: |
+        conda init bash
+        source ~/.bashrc  # Reload the shell to apply conda init
 
     - name: Install Dependencies
       run: |
