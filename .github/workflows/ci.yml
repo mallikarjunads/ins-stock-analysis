@@ -23,7 +23,7 @@ jobs:
       with:
         python-version: 3.9
         auto-activate-base: false
-        environment-file: environment.yml  # Ensure you have an environment.yml file in your repo
+        environment-file: environment.yaml  # Ensure you have an environment.yml file in your repo
         activate-environment: myenv        # Name of the environment from environment.yml
         use-mamba: true                    # Optional: use Mamba (a faster package manager for Conda)
 
