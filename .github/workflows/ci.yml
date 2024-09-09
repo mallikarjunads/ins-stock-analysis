@@ -23,22 +23,19 @@ jobs:
       with:
         python-version: 3.9
         auto-activate-base: false
-        environment-file: environment.yaml  # Make sure this file exists
+        environment-file: environment.yaml  # Ensure this file exists
         activate-environment: myenv        # Name of the Conda environment
-
-    - name: Source Conda and Activate Environment
-      run: |
-        source /usr/share/miniconda/etc/profile.d/conda.sh  # Source conda.sh to configure shell
-        conda activate myenv
 
     - name: Install Dependencies
       run: |
+        source /usr/share/miniconda/etc/profile.d/conda.sh
         conda activate myenv
-        conda info --envs               # Check the environment
-        conda list                      # List installed packages
+        conda info --envs
+        conda list
 
     - name: Run Code Quality Checks
       run: |
+        source /usr/share/miniconda/etc/profile.d/conda.sh
         conda activate myenv
         isort .
         black .
@@ -46,5 +43,6 @@ jobs:
 
     - name: Run Unit Tests
       run: |
+        source /usr/share/miniconda/etc/profile.d/conda.sh
         conda activate myenv
         pytest
