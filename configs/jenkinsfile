@@ -1,0 +1,69 @@
+pipeline {
+    agent any
+
+    // Environment setup
+    environment {
+        VENV_DIR = "${WORKSPACE}/myenv"
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                // Pull code from the repository
+                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Ashish-Adidas/ins-stock-analysis.git'
+            }
+        }
+
+        stage('Set Up Environment') {
+            steps {
+                // Set up Conda environment
+                sh '''
+                conda env create -f environment.yml
+                source activate myenv
+                '''
+            }
+        }
+
+        stage('Run Code Quality Checks') {
+            steps {
+                sh '''
+                source activate myenv
+                isort .
+                black .
+                flake8 .
+                '''
+            }
+        }
+
+        stage('Run Unit Tests') {
+            steps {
+                sh '''
+                source activate myenv
+                pytest tests/
+                '''
+            }
+        }
+
+        stage('Build Success') {
+            steps {
+                echo "Build completed successfully!"
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up environment
+            echo "Cleaning up the environment..."
+            sh "conda deactivate"
+        }
+        
+        success {
+            echo "Pipeline completed successfully."
+        }
+        
+        failure {
+            echo "Pipeline failed."
+        }
+    }
+}
