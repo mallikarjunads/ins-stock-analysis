@@ -74,3 +74,10 @@ pre-commit install
 dagit -w dagster_project/workspace.yaml
 
 localhost:3000
+
+6. Steps to setup the conda environment 
+
+conda create --name myenv python=3.9
+conda activate myenv
+pip install -r requirements.txt
+
