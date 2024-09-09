@@ -23,24 +23,25 @@ jobs:
       with:
         python-version: 3.9
         auto-activate-base: false
-        environment-file: environment.yaml  # Make sure the file exists
-        activate-environment: myenv        # Activate this environment
-        use-mamba: true                    # Optional, to use mamba for faster environment setup
+        environment-file: environment.yaml
+        activate-environment: myenv
 
-    - name: Initialize Conda
-      shell: bash -l {0}
+    - name: Install the Package (Editable Mode)
       run: |
-        conda init bash
-        source ~/.bashrc  # Reload the shell to apply conda init
+        source /usr/share/miniconda/etc/profile.d/conda.sh
+        conda activate myenv
+        pip install -e .
 
     - name: Install Dependencies
       run: |
+        source /usr/share/miniconda/etc/profile.d/conda.sh
         conda activate myenv
-        conda info --envs               # Check the environment
-        conda list                      # List installed packages
+        conda info --envs
+        conda list
 
     - name: Run Code Quality Checks
       run: |
+        source /usr/share/miniconda/etc/profile.d/conda.sh
         conda activate myenv
         isort .
         black .
@@ -48,5 +49,6 @@ jobs:
 
     - name: Run Unit Tests
       run: |
+        source /usr/share/miniconda/etc/profile.d/conda.sh
         conda activate myenv
         pytest
