@@ -39,9 +39,10 @@ PySpark requires Java to run. Ensure you have **Java Development Kit (JDK)** ins
 Open Command Palette (Ctrl+Shift+P) and search for Preferences: Open Settings (JSON).
 Add this to the file:
 
+"python.defaultInterpreterPath": "C:\\Users\\Sakshi\\anaconda3\\envs\\myenv\\python.exe",
 "python.condaPath": "C:/ProgramData/Anaconda3/Scripts/conda.exe"
 
-5. Set Pyspark Env Vars :
+5. Set Pyspark Env Vars : (use command "where python" to find the path)
 
 export PYSPARK_PYTHON="C:/ProgramData/Anaconda3/envs/myenv/python.exe"
 export PYSPARK_DRIVER_PYTHON="C:/ProgramData/Anaconda3/envs/myenv/python.exe"
@@ -65,19 +66,32 @@ pip install -e .
 pytest tests/
 
 5.Install pre-commit hooks:
+create 2 files (pre-push & pre-commit) in .git->hooks folder
 
-pre-commit install
-
+add pre-commit hooks in pre-push file
+  
 
 5. Orchestration : Dagster web UI
 
 dagit -w dagster_project/workspace.yaml
 
-localhost:3000
+localhost:3000 (open in browser)
+
+
+
+------------------------------------------
 
 6. Steps to setup the conda environment 
 
 conda create --name myenv python=3.9
+conda init and restart vscode
 conda activate myenv
 pip install -r requirements.txt
 
+
+
+7. For jupyter notebook, follow  these:
+conda install ipykernel
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+
+#test
