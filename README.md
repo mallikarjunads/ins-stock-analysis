@@ -41,7 +41,7 @@ Add this to the file:
 
 "python.condaPath": "C:/ProgramData/Anaconda3/Scripts/conda.exe"
 
-5. Set Pyspark Env Vars :
+5. Set Pyspark Env Vars : (use command "where python" to find the path)
 
 export PYSPARK_PYTHON="C:/ProgramData/Anaconda3/envs/myenv/python.exe"
 export PYSPARK_DRIVER_PYTHON="C:/ProgramData/Anaconda3/envs/myenv/python.exe"
@@ -78,6 +78,7 @@ localhost:3000
 6. Steps to setup the conda environment 
 
 conda create --name myenv python=3.9
+conda init and restart vscode
 conda activate myenv
 pip install -r requirements.txt
 
