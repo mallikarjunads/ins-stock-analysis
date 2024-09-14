@@ -9,7 +9,7 @@ def run_ingest_script():
     subprocess.run(
         [
             "python",
-            "C:/Users/Sakshi/OneDrive/Desktop/ins-stock-analysis/notebooks/ins_ingest.py",
+            "C:/PySpark_Installed/Repos/ins-stock-analysis/notebooks/ins_ingest.py",
         ],
         check=True,
     )

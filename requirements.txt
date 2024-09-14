@@ -6,6 +6,6 @@ mypy==0.910
 pre-commit==2.16.0
 pytest==6.2.5
 setuptools>=57.0.0
-dagster==1.3.6
-dagit==1.3.6        # Optional: if you want the web UI for Dagster
+dagster==1.8.5
+dagit==1.8.5        # Optional: if you want the web UI for Dagster
 boto3
