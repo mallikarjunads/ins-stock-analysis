@@ -1,2 +1,0 @@
-load_from:
-  - python_file: my_dagster_repo.py

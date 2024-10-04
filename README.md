@@ -65,20 +65,6 @@ pip install -e .
 
 pytest tests/
 
-5.Install pre-commit hooks:
-create 2 files (pre-push & pre-commit) in .git->hooks folder
-
-add pre-commit hooks in pre-push file
-  
-
-5. Orchestration : Dagster web UI
-
-dagit -w dagster_project/workspace.yaml
-
-localhost:3000 (open in browser)
-
-
-
 ------------------------------------------
 
 6. Steps to setup the conda environment 
